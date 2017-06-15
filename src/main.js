@@ -12,7 +12,7 @@
   }
 
   function renderBlock(type, order) {
-    return `<div><p>Item ${type}${order}</p></div>`;
+    return `<div class="item"><p>Item ${type}${order}</p></div>`;
   }
 
   function renderBlocks(page, type, quantity) {
@@ -24,22 +24,22 @@
       }
       blocks += renderBlock(type, i);
     }
-    return `<div>${blocks}</div>`;
+    return `<div class="item-container">${blocks}</div>`;
   }
 
   function renderPaginator(page, quantity) {
     const totalPages = quantity / perPage;
     if (page === 1) {
       if (page < totalPages) {
-        return '<button id="go-forward">></button>';
+        return '<div class="pagination-container"><button class="btn-pagination" id="go-forward">></button></div>';
       } else {
         return '';
       }
     } else {
       if (page < totalPages) {
-        return '<button id="go-back"><</button><button id="go-forward">></button>';
+        return '<div class="pagination-container"><button class="btn-pagination" id="go-back"><</button><button class="btn-pagination" id="go-forward">></button></div>';
       } else {
-        return '<button id="go-back"><</button>';
+        return '<div class="pagination-container"><button class="btn-pagination" id="go-back"><</button></div>';
       }
     }
   }
@@ -88,10 +88,16 @@
     $( "#qty" ).on('change', function(e) {
       const value = parseInt(e.target.value);
       globalValue = value;
+      if (globalValue > 0) {
+        $( "#qty" ).removeClass( "danger" );
+      }
       render(value, globalType, page);
     });
     $( "#type" ).on('change', function(e) {
       const value = e.target.value;
+      if (globalValue === 0) {
+        $( "#qty" ).addClass( "danger" );
+      }
       globalType = value;
       render(globalValue, value, page);
     });

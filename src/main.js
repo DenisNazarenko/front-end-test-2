@@ -2,7 +2,7 @@
 (function(doc){
   let page = 1;
   let globalType = 'A';
-  let globalValue = 0;
+  let globalValue = "";
   const perPage = 3;
 
   function closeSidebar () {
@@ -87,22 +87,25 @@
     });
     $( "#qty" ).on('change', function(e) {
       const value = parseInt(e.target.value);
-      globalValue = value;
-      if (globalValue > 0) {
+      if (isNaN(value)) {
+        $( "#qty" ).addClass( "danger" );
+        globalValue = e.target.value;
+      } else {
         $( "#qty" ).removeClass( "danger" );
+        globalValue = value;
+        render(value, globalType, page);
       }
-      render(value, globalType, page);
     });
     $( "#type" ).on('change', function(e) {
       const value = e.target.value;
-      if (globalValue === 0) {
-        $( "#qty" ).addClass( "danger" );
-      }
       globalType = value;
-      render(globalValue, value, page);
+      if (isNaN(parseInt(globalValue))) {
+        $( "#qty" ).addClass( "danger" );
+      } else {
+        $( "#qty" ).removeClass( "danger" );
+        render(globalValue, value, page);
+      }
     });
-
-    render(globalValue, globalType, page);
   });
 
 })(document);

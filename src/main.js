@@ -82,7 +82,8 @@
     $( ".obj2" ).hide();
     $( ".btn" ).click(function() {
       $( ".obj2" ).toggle( "slide" );
-      $( ".obj3").click(closeSidebar);
+      $( ".obj3" ).off('click', closeSidebar);
+      $( ".obj3" ).on('click', closeSidebar);
     });
     $( "#qty" ).on('change', function(e) {
       const value = parseInt(e.target.value);

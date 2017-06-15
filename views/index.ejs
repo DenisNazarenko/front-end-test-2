@@ -5,8 +5,21 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-
+  <div class="container">
+    <div class="obj1">
+        <%- include('button')%>
+        <%- include('quantity')%>
+    </div>
+    <div class="obj2">
+        <%- include('dropdown')%>
+    </div>
+    <div class="obj3"></div>
+  </div>
   <!-- jquery 3.2.1 -->
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- jquery ui 1.12.11 -->
+  <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+  <!-- main app js file -->
+  <script src="/javascripts/main.js"></script>
   </body>
 </html>

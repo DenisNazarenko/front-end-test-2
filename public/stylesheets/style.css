@@ -1,8 +1,93 @@
 body {
-  padding: 50px;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.obj1 {
+  float: left;
+  width: 25vw;
+  height: 100vh;
+  background-color: #BDBDBD;
+}
+
+.obj2 {
+  position: absolute;
+  width: 15vw;
+  height: 100vh;
+  left: 25vw;
+  background-color: #9E9E9E;
+}
+
+.obj3 {
+  float: right;
+  width: 75vw;
+  height: 100vh;
+  background-color: #E0E0E0;
+}
+
+/* Button style */
+.btn {
+  position: relative;
+  top: 20%;
+  display: block;
+  margin: 0 auto;
+  background-color: #757575;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btn:hover span {
+  padding-right: 25px;
+}
+
+.btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+select {
+  position: relative;
+  top: 20%;
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  font-size: 20px;
+}
+
+input[type=text] {
+  position: relative;
+  top: 30%;
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  font-size: 20px;
 }

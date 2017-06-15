@@ -72,6 +72,17 @@ body {
   right: 0;
 }
 
+.btn-pagination {
+  font-size: 30px;
+  border: none;
+  background-color: #E0E0E0;
+  padding: 10px 24px;
+}
+
+.pagination-container {
+  text-align: center;
+}
+
 select {
   position: relative;
   top: 20%;
@@ -86,8 +97,26 @@ input[type=text] {
   top: 30%;
   display: block;
   margin: 0 auto;
-  width: 50%;
+  width: 200px;
   padding: 12px 20px;
   box-sizing: border-box;
   font-size: 20px;
+}
+
+.item {
+  background-color: #9E9E9E;
+  font-size: 20px;
+  text-align: center;
+  width: 80%;
+  height: 80px;
+  margin: 60px auto;
+}
+
+p {
+  display: inline-block;
+  margin: 30px auto;
+}
+
+.danger {
+  border: solid 4px red;
 }

@@ -1,0 +1,21 @@
+{
+  "name": "front-end-test-2",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Denis Nazarenko <dnazarex@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/DenisNazarenko/front-end-test-2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "^1.12.1",
+    "jquery": "^3.2.1"
+  }
+}

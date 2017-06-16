@@ -1,6 +1,9 @@
 
 # dependencies
 /node_modules
+/bower_components
+/public/javascripts/*.js
+/public/javascripts/*.js.map
 
 # misc
 /.idea
